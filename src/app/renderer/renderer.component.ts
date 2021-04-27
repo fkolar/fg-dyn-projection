@@ -37,7 +37,7 @@ export class RendererComponent implements OnInit {
     console.log(module.componentFactories[0]);
     const cmdFactory = module.componentFactories[0];
     const component: ComponentRef<InputComponent> = this.viewContainer.createComponent(cmdFactory, null,
-      null, [[]], moduleNgModuleRef);
+      this.viewContainer.injector, [[]], moduleNgModuleRef);
     console.log(component);
     component.instance.value = 'dddd';
     component.instance.name = 'input1';
