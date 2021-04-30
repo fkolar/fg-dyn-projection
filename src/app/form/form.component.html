@@ -1,6 +1,6 @@
-<fdp-form-group  #fg>
+<fdp-form-group #fg>
 
-<!--  -->
+  <!--  -->
   <ng-container *ngTemplateOutlet="content;context:{$implicit: fg}">
   </ng-container>
 
@@ -9,19 +9,21 @@
     <ng-container *ngTemplateOutlet="fields;context:{$implicit: fg}">
     </ng-container>
   </ng-template>
-<!---->
+  <!---->
 
   <ng-template #fields let-fg>
-    <fdp-form-field #ff
-                    [formGroupContainer]="fg"
-                    label="Default Input Field"
-                    id="input1"
-                    name="input1"
-                    rank="1"
-                    placeholder="Field placeholder text">
+    <app-wrapper>
+      <fdp-form-field #ff
+                      [formGroupContainer]="fg"
+                      label="Default Input Field"
+                      id="input1"
+                      name="input1"
+                      rank="1"
+                      placeholder="Field placeholder text">
 
-      <app-render [parent]="ff"></app-render>
-    </fdp-form-field>
+        <app-render [parent]="ff"></app-render>
+      </fdp-form-field>
+    </app-wrapper>
   </ng-template>
 </fdp-form-group>
 
